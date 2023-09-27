@@ -27,6 +27,11 @@ function init()
     
     player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0);
     scene.add(player1.graphic);
+    player1.position = player1.graphic.position;
+
+    player2 = new Enemy(0xffffff, new THREE.Vector2(350, 150), Math.random()*360);
+    player2.position = player2.graphic.position;
+    scene.add(player2.graphic);
 
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
@@ -49,7 +54,7 @@ function Ground(color, size_x, size_y, nb_tile)
 
             color = colors[Math.floor(Math.random()*colors.length)];
             
-            if ( 100 < x + sizeOfTileX && 100 >= x && 0 < y + sizeOfTileY && 0 >= y )
+            if ( 50 < x + sizeOfTileX && 50 >= x && 0 < y + sizeOfTileY && 0 >= y )
             {
                color = 0x00ffff;
             }

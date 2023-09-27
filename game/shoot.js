@@ -81,7 +81,6 @@ function player_falling()
     var y = player1.graphic.position.y | 0;
     var length = noGround.length;
     var element = null;
-
     for (var i = 0; i < length; i++) {  
         element = noGround[i];
         if (element == null)

@@ -15,4 +15,5 @@ function update()
 
     player1.move();
     controls.update();
+    player2.move();
 }
