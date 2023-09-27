@@ -76,6 +76,15 @@ Player.prototype.move = function () {
         this.speed = this.speed + 0.04;
     }
 
+    if (this.position.x > WIDTH / 2)
+        this.position.x = WIDTH / 2
+    else if (this.position.x < -WIDTH / 2)
+        this.position.x = -WIDTH / 2
+    if (this.position.y > HEIGHT / 2)
+        this.position.y = HEIGHT / 2
+    else if (this.position.y < -HEIGHT / 2)
+        this.position.y = -HEIGHT / 2
+
     this.graphic.position.x = this.position.x;
     this.graphic.position.y = this.position.y;
     
