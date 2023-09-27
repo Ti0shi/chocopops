@@ -29,7 +29,7 @@ function init()
     scene.add(player1.graphic);
     player1.position = player1.graphic.position;
 
-    player2 = new Enemy(0xffffff, new THREE.Vector2(350, 150), Math.random()*360);
+    player2 = new Enemy(0xffffff, new THREE.Vector2(350, 150), 0);
     player2.position = player2.graphic.position;
     scene.add(player2.graphic);
 

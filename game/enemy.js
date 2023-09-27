@@ -43,7 +43,7 @@ Enemy.prototype.decelerate = function (distance) {
 };
 
 Enemy.prototype.move = function () {
-    this.speed = -1.5;
+    this.speed = -3;
     var moveTo = new THREE.Vector3(
         this.speed * Math.cos(this.direction) + this.position.x,
         this.speed * Math.sin(this.direction) + this.position.y,
@@ -55,26 +55,26 @@ Enemy.prototype.move = function () {
     if (this.position.x > WIDTH / 2)
     {
         this.position.x = WIDTH / 2;
-        this.speed = -1.5;
-        this.direction = Math.random()*360;
+        this.speed = -this.speed;
+        this.direction = 0;
     }
     else if (this.position.x < -WIDTH / 2)
     {
         this.position.x = -WIDTH / 2;
-        this.speed = 1.5;
-        this.direction = Math.random()*360;
+        this.speed = -this.speed;
+        this.direction = Math.PI;
     }
     if (this.position.y > HEIGHT / 2)
     {
         this.position.y = HEIGHT / 2;
-        this.speed = -1.5;
-        this.direction = Math.random()*360;
+        this.speed = -this.speed;
+        this.direction = 0;
     }
     else if (this.position.y < -HEIGHT / 2)
     {
         this.position.y = -HEIGHT / 2;
-        this.speed = 1.5;
-        this.direction = Math.random()*360;
+        this.speed = -this.speed;
+        this.direction = Math.PI;
     }
 
     this.graphic.position.x = this.position.x;
